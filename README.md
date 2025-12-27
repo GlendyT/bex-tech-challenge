@@ -56,3 +56,10 @@ Aplicación de dashboard inmobiliario minimalista construida con React Router v7
 - `/dashboard`: Vista principal (Resumen con enlaces).
 - `/dashboard/proyectos`: Tabla de proyectos inmobiliarios.
 - `/dashboard/finanzas`: Métricas y KPIs financieros.
+
+## Vista Previa
+
+![Captura de pantalla](./dashboard.png)
+
+![GIF de demostración](./dashboard.gif)
+
