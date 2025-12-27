@@ -33,7 +33,7 @@ Aplicación de dashboard inmobiliario minimalista construida con React Router v7
 
 1.  **Clonar el repositorio** (o navegar a la carpeta del proyecto):
     ```bash
-    cd real-estate-dashboard
+    cd bex-tech-challenge
     ```
 
 2.  **Instalar dependencias**:
