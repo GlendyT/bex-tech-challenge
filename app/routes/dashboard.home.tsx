@@ -10,6 +10,8 @@ import {
 } from "~/components/ui/table"
 import { Badge } from "~/components/ui/badge"
 import { Link } from "react-router"
+import { Area, AreaChart } from "recharts"
+import { ChartContainer, ChartTooltip, ChartTooltipContent } from "~/components/ui/chart"
 
 const projects = [
     {
@@ -32,6 +34,48 @@ const projects = [
     },
 ]
 
+const dataSales = [
+    { month: "Jan", value: 1000 },
+    { month: "Feb", value: 1500 },
+    { month: "Mar", value: 1200 },
+    { month: "Apr", value: 1800 },
+    { month: "May", value: 2200 },
+    { month: "Jun", value: 2000 },
+]
+
+const dataUnits = [
+    { month: "Jan", value: 5 },
+    { month: "Feb", value: 8 },
+    { month: "Mar", value: 6 },
+    { month: "Apr", value: 10 },
+    { month: "May", value: 12 },
+    { month: "Jun", value: 15 },
+]
+
+const dataViews = [
+    { month: "Jan", value: 150 },
+    { month: "Feb", value: 220 },
+    { month: "Mar", value: 300 },
+    { month: "Apr", value: 350 },
+    { month: "May", value: 400 },
+    { month: "Jun", value: 450 },
+]
+
+const chartConfig = {
+    sales: {
+        label: "Ventas",
+        color: "var(--color-chart-1)",
+    },
+    units: {
+        label: "Unidades",
+        color: "var(--color-chart-2)",
+    },
+    views: {
+        label: "Vistas",
+        color: "var(--color-chart-3)",
+    },
+}
+
 export default function DashboardHome() {
     return (
         <div className="flex flex-1 flex-col gap-6 p-4 pt-0">
@@ -47,35 +91,77 @@ export default function DashboardHome() {
                 </Link>
                 <div className="grid gap-4 md:grid-cols-3">
                     <Link to="/dashboard/finanzas">
-                        <Card className="hover:shadow-lg transition-shadow cursor-pointer h-full">
+                        <Card className="hover:shadow-lg transition-shadow cursor-pointer h-full overflow-hidden">
                             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                                 <CardTitle className="text-sm font-medium">Total Ventas</CardTitle>
                                 <DollarSign className="h-4 w-4 text-muted-foreground" />
                             </CardHeader>
                             <CardContent>
                                 <div className="text-2xl font-bold">$1.2M</div>
+                                <div className="h-[40px] mt-2">
+                                    <ChartContainer config={chartConfig} className="h-full w-full">
+                                        <AreaChart data={dataSales}>
+                                            <Area
+                                                dataKey="value"
+                                                type="natural"
+                                                fill="var(--color-chart-1)"
+                                                fillOpacity={0.2}
+                                                stroke="var(--color-chart-1)"
+                                                strokeWidth={2}
+                                            />
+                                        </AreaChart>
+                                    </ChartContainer>
+                                </div>
                             </CardContent>
                         </Card>
                     </Link>
                     <Link to="/dashboard/finanzas">
-                        <Card className="hover:shadow-lg transition-shadow cursor-pointer h-full">
+                        <Card className="hover:shadow-lg transition-shadow cursor-pointer h-full overflow-hidden">
                             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                                 <CardTitle className="text-sm font-medium">Unidades</CardTitle>
                                 <Home className="h-4 w-4 text-muted-foreground" />
                             </CardHeader>
                             <CardContent>
                                 <div className="text-2xl font-bold">15</div>
+                                <div className="h-[40px] mt-2">
+                                    <ChartContainer config={chartConfig} className="h-full w-full">
+                                        <AreaChart data={dataUnits}>
+                                            <Area
+                                                dataKey="value"
+                                                type="step"
+                                                fill="var(--color-chart-2)"
+                                                fillOpacity={0.2}
+                                                stroke="var(--color-chart-2)"
+                                                strokeWidth={2}
+                                            />
+                                        </AreaChart>
+                                    </ChartContainer>
+                                </div>
                             </CardContent>
                         </Card>
                     </Link>
                     <Link to="/dashboard/finanzas">
-                        <Card className="hover:shadow-lg transition-shadow cursor-pointer h-full">
+                        <Card className="hover:shadow-lg transition-shadow cursor-pointer h-full overflow-hidden">
                             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                                 <CardTitle className="text-sm font-medium">Vistas</CardTitle>
                                 <Eye className="h-4 w-4 text-muted-foreground" />
                             </CardHeader>
                             <CardContent>
                                 <div className="text-2xl font-bold">450</div>
+                                <div className="h-[40px] mt-2">
+                                    <ChartContainer config={chartConfig} className="h-full w-full">
+                                        <AreaChart data={dataViews}>
+                                            <Area
+                                                dataKey="value"
+                                                type="monotone"
+                                                fill="var(--color-chart-3)"
+                                                fillOpacity={0.2}
+                                                stroke="var(--color-chart-3)"
+                                                strokeWidth={2}
+                                            />
+                                        </AreaChart>
+                                    </ChartContainer>
+                                </div>
                             </CardContent>
                         </Card>
                     </Link>

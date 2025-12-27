@@ -62,4 +62,32 @@ La aplicacion es un dashboard inmobiliario, donde la ruta principal es /dashboar
 
 **Objetivo**: Reestructurar la documentación del registro de prompts para cumplir con un formato de reporte específico solicitado por el usuario.
 
+---
+
+**Intento 9**
+> Prompt: "Listo, lo ultimo a agregar.  En el sidebar aun hay una palabra en ingles, application, remuevela y agrega en español Aplicacion.    Tambien, remueve los archivos no necesarios como los de Docker.  Adicional, mejora el ReadME, quiero que el stack o arquitectura se vea como una tabla no un listado"
+
+**Objetivo**: Pulido final del proyecto: localización completa (sidebar), limpieza de código (eliminación de Dockerfile) y mejora de la presentación de la documentación técnica (README con tablas).
+
+---
+
+**Intento 10**
+> Prompt: "quiero que en las cards de finanzas, tambien se vea como charts, ya que son metricas de KPI"
+
+**Objetivo**: Enriquecer la visualización de datos en el dashboard financiero integrando gráficos interactivos (Sparklines/Area Charts) dentro de las tarjetas de métricas.
+
+---
+
+**Intento 11**
+> Prompt: "mejora la UI de las cards de finanzas cuando con el modo oscuro o claro, ya que es un poco dificil de ver en el modo oscuro"
+
+**Objetivo**: Refinamiento estético y de accesibilidad. Se mejoró el contraste de los gráficos utilizando una paleta de colores distintiva (Azul, Verde Teal, Naranja) optimizada para el modo oscuro, reemplazando el uso monocromático del color primario.
+
+---
+
+**Intento 12**
+> Prompt: "Ok, pero no quiero que sean colores brillantes, ya que el estilo es minimalista y se arruina el visual al ver casi todo de blanco y negro y las cards de colores"
+
+**Objetivo**: Ajuste final de diseño ("Look & Feel"). Se revirtió la decisión de usar colores distintivos para los gráficos, optando por una paleta estrictamente monocromática (blanco/negro según el tema) para alinearse con la identidad minimalista solicitada originalmente.
+
 
